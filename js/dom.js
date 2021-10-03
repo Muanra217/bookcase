@@ -155,10 +155,11 @@ function mySearch() {
     let i = 0;
     for(title of listTitle) {
             if(searching != "") {
-                if(listTitle[i].childNodes[0].innerText.toLowerCase() != searching) {
-                    listTitle[i].parentElement.style.display = "none";
-                } else {
+                //str.include(value)method returns true if a string contains a specified string, otherwise false.
+                if(listTitle[i].childNodes[0].innerText.toLowerCase().includes(searching)) {
                     listTitle[i].parentElement.style.display = "";
+                } else {
+                    listTitle[i].parentElement.style.display = "none";
                 } 
             } else {
                 listTitle[i].parentElement.style.display = "";
